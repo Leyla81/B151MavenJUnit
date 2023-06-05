@@ -51,6 +51,7 @@ amount.sendKeys("100");
 
         // "The payment was successfully submitted." mesajinin ciktigini test edin
         WebElement mesaj = driver.findElement(By.xpath("//span[text()='The payment was successfully submitted.']"));
+        System.out.println(mesaj.getText());
 
         if(mesaj.isDisplayed()){
             System.out.println("TEST PASSED");
