@@ -9,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class TestBase {
     //abstract yaptık obje olusturulmaması icin
@@ -29,7 +31,7 @@ public abstract class TestBase {
 
     @After
     public void tearDown() throws Exception {
-        driver.quit();
+        //driver.quit();
     }
 
 
@@ -87,6 +89,23 @@ public void ddmVisibleText(WebElement ddm,String secenek){
 
 
     }
+    //switchTo Window_1
+    public void switchToWindow1(int index){
+        List<String >pencereler =new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(pencereler.get(index));
+    }
+    //switchTo Window_2
+
+    public void switchToWindow2(int index){
+        driver.switchTo().window(driver.getWindowHandles().toArray()[index].toString());
+    }
+
+
+
+
+
+
+
 
 
 }
