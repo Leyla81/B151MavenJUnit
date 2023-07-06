@@ -205,7 +205,7 @@ String ikinciSayfaHandle = driver.getWindowHandle();
         driver.findElement(By.xpath("(//a)[2]")).click();//kontrolumuz dısında yeni bir sekme acıldı
 
 //  ikinci sayfa Title'ının "New Window" olduğunu test edin.
-        switchToWindow2(1);
+        switchWindow(1);
         String actualtitle1= driver.getTitle();
         System.out.println("actualtitle1 = " + actualtitle1);
         String expectedtitle = "New Window";
@@ -214,15 +214,15 @@ String ikinciSayfaHandle = driver.getWindowHandle();
 
 
 //  ilk sayfaya dönün ve Title'ının "The Internet" olduğunu test edin.
-      switchToWindow2(0);
+      switchWindow(0);
         String ilkSayfaactualTitle = driver.getTitle();
         String ilkSayfaexpectedTitle ="The Internet";
         Assert.assertEquals(ilkSayfaexpectedTitle,ilkSayfaactualTitle);
 
 //  ikinci sayfaya tekrar geçin.
-      switchToWindow2(1);
+      switchWindow(1);
 //  ilk sayfaya tekrar dönün.
-        switchToWindow2(0);
+        switchWindow(0);
 
     }
 }
