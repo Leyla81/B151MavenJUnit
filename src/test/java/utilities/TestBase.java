@@ -237,6 +237,31 @@ public void ddmVisibleText(WebElement ddm,String secenek){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
     }
+    //JS SendKeys() Method
+    public void jsSendKeys(String text,WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].value='"+text+"'",element);
+    }
+
+
+  //JS setAttribute () method ---Attribute u degistirme
+
+    public void jsSetAttribute(String attribute,String text ,WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('"+attribute+"','"+text+"')",element);
+
+
+    }
+
+
+
+
+
+
+
+
+
+
 
 }
 
